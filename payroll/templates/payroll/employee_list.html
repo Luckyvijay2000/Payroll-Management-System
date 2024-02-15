@@ -1,0 +1,143 @@
+{% extends 'payroll/base.html' %}
+{% block title %}Dispay Employe Salary {% endblock %}
+{% block body %}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+
+
+            {% for employee in employees %}
+            <div class="container-fluid">
+                <div class="row">
+                    <h1 class="text-center text-dark">VIKRAMA SIMHAPURI UNIVERSITY COLLEGE :NELLORE</h1>
+                    <hr>
+                    <h3 class="text-center text-dark">PAY ROLL MONITERING SYSTEM :: PAY BILL FOR THE MONTH OF {{employee.salary.month}}
+
+
+
+
+                        <div class="container">
+                            <div class="row">
+
+
+                                <div class="col-sm-6">
+                                    <h5>Employee code  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: {{ employee.employee_id }}</h5>
+                                    <h5>Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:{{ employee.name }}</h5>
+                                    <h5>Designation &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ employee.designation }}</h5>
+                                    <h5>Department &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;: {{ employee.department }}
+                                    </h5>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>CPS A/C No &nbsp;&nbsp;&nbsp; :{{employee.CPS}} </h5>
+                                    <h5>PAN NO &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:{{ employee.PAN}} </h5>
+                                    <h5>GIS A/C No &nbsp;&nbsp;&nbsp;:{{employee.GIS}}</h5>
+                                    <!-----<h5>BANK ACOUNT NAME &nbsp;&nbsp;&nbsp;: {{employee.Account_number}}</h5>--->
+                                    <h5>ACCOUNT NUMBER &nbsp;&nbsp;:{{employee.Account_number}}</h5>
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <hr>
+                    <h4 class="text-center">EARNINGS</h4>
+                    <hr>
+                    <h6>Basic &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :{{ employee.basic }}</h6>
+                    <h6>AGP &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{ employee.AGP }}
+                    </h6>
+                    <h6>Pay &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:{{ employee.Pay }}
+                    </h6>
+                    <h6>PP &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{employee.PP }}</h6>
+                    <h6>DA(31%) &nbsp;&nbsp;&nbsp; &nbsp; :{{ employee.DA }}</h6>
+                    <h6>HRA(18%) &nbsp;&nbsp;&nbsp; :{{ employee.HRA }}</h6>
+                    <h6>Others &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :{{ employee.Others }}</h6>
+                    <hr>
+                    <h5>Gr.Salary &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :{{employee.gr_salary}}</h5>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <hr>
+                    <h4 class="text-center">DEDUCTION-1</h4>
+                    <hr>
+                    <h6>GPF &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :{{ employee.GPF }}</h6>
+                    <h6>GIS &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; :{{ employee.GIS }}</h6>
+                    <h6>CPS &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :{{ employee.CPS }}</h6>
+                    <h6>P.T. &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; :{{ employee.PT }}</h6>
+                    <h6>I.T. &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;:{{ employee.IT }}</h6>
+                    <h6>L.I.C. 1. &nbsp;&nbsp; :{{ employee.LIC1 }}</h6>
+                    <h6>L.I.C 2. &nbsp;&nbsp;&nbsp; :{{ employee.LIC2 }}</h6>
+                    <hr>
+                    <h5>Deductions &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; : {{employee.deduction}}</h5>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <hr>
+                    <h4 class="text-center">DEDUCTION-2</h4>
+                    <hr>
+                    <h6>H.R &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp; :{{ employee.HR }}</h6>
+                    <h6>V-Adv &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; :{{employee.V_ADV }}</h6>
+                    <h6>Assoc.Free &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{ employee.AssocFee }}</h6>
+                    <h6>EHS Empls.Share :{{ employee.EHS_Empl_share }}</h6>
+                    <h6>Mar-Adv &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; :{{employee.Mar_Adv }}</h6>
+                    <h6>FC &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; :{{ employee.FC }}</h6>
+                    <h6>FLag Day Sub &nbsp;&nbsp;&nbsp; &nbsp;:{{ employee.bFlaf_day_sub }}</h6>
+
+                    <hr>
+                    <h5>Net Salary &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; : {{ employee.salary.amount }}</h5>
+                </div>
+
+
+                <hr>
+
+                
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <br>
+    <br><br>
+
+
+
+    <table>
+
+
+
+
+
+        {% endfor %}
+
+
+
+
+
+        </body>
+
+        </html>
+
+
+        {% endblock %}

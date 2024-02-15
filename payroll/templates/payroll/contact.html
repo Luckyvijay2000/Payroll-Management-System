@@ -1,0 +1,26 @@
+{% extends 'payroll/base.html' %}
+<!-- {% load crispy_forms_tags %} -->
+{% block body %}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="cols-m-6">
+            <h1>Contact Form</h1>
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                {{ form.as_p  }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+
+        <div class="col-sm-6">
+            <img src="https://www.adp.com/-/media/adp/resourcehub/rh2/images/insight/img/payroll-mgmt-system-616.jpg?rev=fe6a4112081c48c49be3b270196f7bc8&hash=E4BB1069EEE26C3BAF3D1E1EBF60C49C" alt="">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
